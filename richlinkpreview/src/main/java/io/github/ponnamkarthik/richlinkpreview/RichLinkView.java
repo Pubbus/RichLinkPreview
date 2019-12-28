@@ -163,11 +163,15 @@ public class RichLinkView extends RelativeLayout {
             @Override
             public void onData(MetaData metaData) {
                 meta = metaData;
-                if(!meta.getTitle().isEmpty() || !meta.getTitle().equals("")) {
-                    viewListener.onSuccess(true);
+                if(meta != null) {
+                    if(!meta.getTitle().isEmpty() || !meta.getTitle().equals("")) {
+                        viewListener.onSuccess(true);
+                    }
+                    initView();
                 }
-
-                initView();
+                else {
+                    viewListener.onError(new Exception("Not Found"))
+                }
             }
 
             @Override
