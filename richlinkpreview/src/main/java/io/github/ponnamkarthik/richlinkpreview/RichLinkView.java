@@ -170,7 +170,7 @@ public class RichLinkView extends RelativeLayout {
                     initView();
                 }
                 else {
-                    viewListener.onError(new Exception("Not Found"))
+                    viewListener.onError(new Exception("Not Found"));
                 }
             }
 
